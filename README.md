@@ -1,4 +1,4 @@
-### Please visit [this link](https://skogman.github.io/drlnd_p2_continous_control/) to view the project summary.
+### Please visit [this link](https://jadechip.github.io/reinforcement-learning-continous-control/) to view the project summary.
 
 [//]: # (Image References)
 
