@@ -32,6 +32,7 @@
       background-color: #ffffff;
       width: 96px;
       box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+      z-index: 100;
     }
 
     aside ul {
@@ -57,9 +58,6 @@
       margin: 24px 0;
     }
 
-    table, th, td {
-      border: 1px solid black;
-    }
 
     h2 {
       text-decoration: underline;
@@ -99,6 +97,7 @@
     }
 
     .gradient-backdrop {
+      opacity: 0.9;
       height: 400px;
       background: #E55D87;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);  /* Chrome 10-25, Safari 5.1-6 */
@@ -124,39 +123,38 @@
       max-width: 240px;
     }
 
+    .img-backdrop {
+      background-image: url(https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif);
+      background-size: contain;
+    }    
+
+    @media only screen and (max-width: 700px) {
+      aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+
   </style>
 
   <aside>
     <ul>
-      <li>P1</li>
+      <li><a href="https://jadechip.github.io/reinforcement-learning-navigation/">P1</a></li>
       <li class="active">
         P2
       </li>
-      <li>P3</li>
+      <li><a href="https://jadechip.github.io/reinforcement-learning-collaboration-competition/">P3</a></li>
     </ul>
   </aside>
 
-  <div class="gradient-backdrop">
-    <h1>Project 2: Continous Control</h1>
-  </div>  
+  <div class="img-backdrop">
+    <div class="gradient-backdrop">
+      <h1>Reinforcement Learning: Continous Control</h1>
+    </div>  
+  </div>
 
   <div id="content">
-
-    <section>
-
-      <h2>Approach</h2>
-      <p>
-
-        Our initial approach to solving the "Reacher" environment involved using multiple agents, and a custom implementation of the D4PG algorithm.
-        However this proved challenging, and we were never able to achieve a score higher than 1.5. Due to this as well as time constraints, we instead opted to
-        base our implementation on Udacity's DDPG algorithm, used to solve the "Pendulum" environment. We also limted our scope to a single agent.
-
-        We found that the agent was able to complete the task and achieve a score greater than 30 in 267 episodes with a final score of 31.02.
-
-        Please see the plot and table below for more information.
-        
-      </p>
-    </section>
 
     <section>
       <h2>
@@ -196,6 +194,14 @@
       and a final output corresponding to the number of available actions (4). In between, the hidden layer has a total of 64 neurons.
       Finally, we decided to use the relu activation function.
 
+    </section>
+
+    <section class="container">
+      <h2>Code</h2>
+      <h3>Actor - Critic</h3>
+      <script src="https://gist.github.com/jadechip/10c6561293ec6e1a096261ec2c04a3e0.js"></script>
+      <h3>Agent</h3>
+      <script src="https://gist.github.com/jadechip/6e36b255296c49c96e73c0384a1e29de.js"></script>
     </section>
 
     <section class="container">
